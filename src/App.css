@@ -1,0 +1,28 @@
+/* --------------------------------------------------
+Root variables & base styles
+-------------------------------------------------- */
+:root {
+  --font-mono: 'Fira Mono', 'Courier New', monospace;
+  --bg: #0A0A0A;
+  --dim: 0.5;
+  --color-white: #F6F6F6
+}
+
+.color-yellow {
+  color: #FED027;
+}
+
+.bg-yellow {
+  background-color: #FED027;
+}
+
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--color-white);
+  font-family: var(--font-mono);
+  line-height: 1.55;
+}
