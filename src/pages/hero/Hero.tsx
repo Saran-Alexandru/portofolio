@@ -31,8 +31,7 @@ function Hero() {
           <div className="hero-grid-item-me-img"><img className="w-full h-auto rounded-sm" src={Me} alt="Saran" /></div>
           <div className="hero-grid-item-desc text-center md:text-left">
             <h1 className="lg:text-6xl text-4xl uppercase font-bold tracking-wider color-yellow">Web Developer</h1>
-            <p className="pt-4 mb-0 sm:mb-7">Experienced in <a className="font-semibold underline underline-offset-3 decoration-2 decoration-[#00ffd0]">Drupal development</a>, using
-              JavaScript, React, CSS, Twig, and Bootstrap to build
+            <p className="pt-4 mb-0 sm:mb-7">Experienced in <a className="font-semibold underline underline-offset-3 decoration-2 decoration-[#0678be]">Drupal development</a>, using <a className="font-semibold underline underline-offset-3 decoration-2 decoration-[#f7df1e]">JavaScript</a>, <a className="font-semibold underline underline-offset-3 decoration-2 decoration-[#61dafb]">React</a>, CSS, Twig, and Bootstrap to build
               fast, scalable, SEO-friendly websites. Focused
               on clean front-end architecture, efficient
               debugging, and seamless design integration.</p>

@@ -3,7 +3,7 @@ import { techIcons } from "../../data/techIcons";
 
 export default function TechIconsGrid() {
   return (
-    <div className="pb-13">
+    <div>
       <div className="flex flex-row flex-wrap">
         {techIcons.map(({ icon: Icon, color }, i) => (
           <div key={i} className="w-[60px] h-[60px] md:w-[100px] md:h-[100px] mx-auto">
