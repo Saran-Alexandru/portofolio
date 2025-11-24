@@ -1,7 +1,7 @@
-
+/*
 #hero {
 background: linear-gradient(12deg,rgba(10, 10, 10, 1) 42%, rgba(254, 208, 39, 0.27) 100%);
-}
+} */
 
 
 /* SECTION Name * Info */
@@ -47,12 +47,12 @@ background: linear-gradient(12deg,rgba(10, 10, 10, 1) 42%, rgba(254, 208, 39, 0.
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(1, 1fr);
   grid-column-gap: 60px;
-  align-items: start;
+  align-items: center;
 
 
   .hero-grid-item-me-img {
     grid-area: 1 / 1 / 4 / 3;
-    width: 16rem;
+    width: 19rem;
   }
   .hero-grid-item-desc {
     grid-area: 1 / 3 / 2 / 5;
@@ -81,5 +81,3 @@ background: linear-gradient(12deg,rgba(10, 10, 10, 1) 42%, rgba(254, 208, 39, 0.
       font-size: 16px;
     }
 }
-
-

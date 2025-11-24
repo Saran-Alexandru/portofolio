@@ -15,8 +15,7 @@ function Hero() {
 
 
   return (
-    <section id="hero">
-      <div className="max-w-screen-xl mx-auto pt-26 px-4 pb-13">
+    <div className="max-w-screen-xl mx-auto pt-26 px-4 pb-24">
         {/* SECTION Name * Info */}
         <div className="hero-container-grid-name-info text-base lg:text-lg font-bold tracking-wider pb-10">
           <div className="hero-grid-item-name-img pb-4"><img src={Name} alt="Saran" /></div>
@@ -37,29 +36,28 @@ function Hero() {
               debugging, and seamless design integration.</p>
           </div>
           <div className="flex gap-10">
-          <a href="#projects" className="hero-grid-item-button">
-            <button
-              onClick={() => setActive("#projects")}
-                className="bg-[#FED027] hover:bg-[#0A0A0A] text-[#0A0A0A] hover:text-[#FED027] font-bold px-3 lg:px-6 py-2.5 border-[#FED027] border rounded-sm inline-flex items-center gap-2">
-              <PiArrowBendRightDownBold className="text-lg" />
-              View projects
-            </button>
-          </a>
-            <a target="_blank" href="https://drive.google.com/file/d/1pUpSGQiNXj7saV5yEILvPEKz_Z7MqJ37/view" className="hero-grid-item-button">
-            <button
+            <a href="#projects" className="hero-grid-item-button">
+              <button
                 onClick={() => setActive("#projects")}
-                className="bg-[#0A0A0A] hover:bg-[#FED027] text-[#FED027] hover:text-[#0A0A0A] font-bold px-3 lg:px-6 py-2.5 border-[#FED027] border rounded-sm inline-flex items-center gap-2">
+                className="bg-[#FED027] hover:bg-[#0A0A0A] text-[#0A0A0A] hover:text-[#FED027] font-bold px-3 lg:px-6 py-2.5 border-[#FED027] border-2 rounded-sm inline-flex items-center gap-2">
+                <PiArrowBendRightDownBold className="text-lg" />
+                View projects
+              </button>
+            </a>
+            <a target="_blank" href="https://drive.google.com/file/d/1pUpSGQiNXj7saV5yEILvPEKz_Z7MqJ37/view" className="hero-grid-item-button">
+              <button
+                onClick={() => setActive("#projects")}
+              className="bg-opacity-0 hover:bg-[#FED027] text-[#FED027] hover:text-[#0A0A0A] font-bold px-3 lg:px-6 py-2.5 border-[#FED027] border-2 rounded-sm inline-flex items-center gap-2">
                 <IoNewspaperOutline className="text-lg" />
-              Resume
-            </button>
-          </a>
+                Resume
+              </button>
+            </a>
           </div>
         </div>
 
         {/* SECTION Skills Icons */}
         <TechIconsGrid />
       </div>
-    </section>
   );
 }
 
