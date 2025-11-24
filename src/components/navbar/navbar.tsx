@@ -1,12 +1,21 @@
 import "./navbar.css";
 
 import  { useEffect, useState } from "react";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+import { gsap } from "gsap";
 
-
-export default function NavBar() {
+export default function NavBar({ active }: { active: string }) {
 
   const [scrolled, setScrolled] = useState(false);
-  const [active, setActive] = useState<string>("/");
+  gsap.registerPlugin(ScrollToPlugin);
+
+  const scrollToWithOffset = (id: string, offset: number) => {
+    const element = document.getElementById(id);
+    if (element) {
+      const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+      gsap.to(window, {duration: 1, scrollTo: elementPosition + offset, ease: "power2.out"});
+    }
+  }
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,10 +33,14 @@ export default function NavBar() {
   }, []);
 
   return (
-    <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-[#0A0A0A]' : 'bg-transparent'}`}>
+    <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? 'backdrop-blur-lg' : 'bg-transparent'}`}>
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-4 py-8">
         <a
-          href="/"
+          onClick={(e) => {
+            e.preventDefault();
+            scrollToWithOffset("hero", -150);
+          }}
+          href="#hero"
           className="flex items-center space-x-3 rtl:space-x-reverse"
         >
           <span className="self-center text-xl text-heading font-semibold whitespace-nowrap">
@@ -65,39 +78,67 @@ export default function NavBar() {
           <ul className="font-semibold uppercase flex flex-col p-4 md:p-0 mt-4 border border-default rounded-base bg-neutral-secondary-soft md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-neutral-primary">
             <li>
               <a
-                href="/"
-                onClick={() => setActive("/")}
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToWithOffset("hero", -150);
+                }}
+                href="#hero"
                 className={`
                       block py-2 px-3 rounded
                       bg-brand md:bg-transparent
                       hover:text-amber-300
                       md:text-fg-brand md:p-0
-                      ${active === "/" ? "text-amber-300" : "text-heading"}`}
-                aria-current="page"
-              >
+                      ${active === "hero" ? "text-amber-300" : "text-heading"}`}>
                 Home
               </a>
             </li>
             <li>
               <a
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToWithOffset("projects", -150);
+                }}
                 href="#projects"
-                className="block py-2 px-3 text-heading rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0 md:dark:hover:bg-transparent"
+                className={`
+                      block py-2 px-3 rounded
+                      bg-brand md:bg-transparent
+                      hover:text-amber-300
+                      md:text-fg-brand md:p-0
+                      ${active === "projects" ? "text-amber-300" : "text-heading"}`}
               >
                 Projects
               </a>
             </li>
             <li>
               <a
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToWithOffset("about", -150);
+                }}
                 href="#about"
-                className="block py-2 px-3 text-heading rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0 md:dark:hover:bg-transparent"
+                className={`
+                      block py-2 px-3 rounded
+                      bg-brand md:bg-transparent
+                      hover:text-amber-300
+                      md:text-fg-brand md:p-0
+                      ${active === "about" ? "text-amber-300" : "text-heading"}`}
               >
                 About
               </a>
             </li>
             <li>
               <a
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToWithOffset("contact", -150);
+                }}
                 href="#contact"
-                className="block py-2 px-3 text-heading rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0 md:dark:hover:bg-transparent"
+                className={`
+                      block py-2 px-3 rounded
+                      bg-brand md:bg-transparent
+                      hover:text-amber-300
+                      md:text-fg-brand md:p-0
+                      ${active === "contact" ? "text-amber-300" : "text-heading"}`}
               >
                 Contact
               </a>

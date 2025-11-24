@@ -4,9 +4,9 @@
 function About() {
 
   return (
-    <section id="about">
+    <div>
      <h1>about</h1>
-    </section>
+ </div >
   )
 }
 
