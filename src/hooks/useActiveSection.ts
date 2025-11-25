@@ -14,7 +14,7 @@ export function useActiveSection(
         });
       },
       {
-        threshold: 0.4, // când 40% din secțiune e vizibilă -> active
+        threshold: 0.2, // când 40% din secțiune e vizibilă -> active
       }
     );
 
