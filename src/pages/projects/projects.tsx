@@ -1,5 +1,6 @@
 
 import "./projects.css";
+import { highlightTech } from "../../utils/highlightTech";
 import { projects } from "../../data/projects";
 
 import { AiOutlineAim } from "react-icons/ai";
@@ -44,35 +45,29 @@ function Projects() {
             >
               {/* text column */}
               <div className="space-y-4">
-                <h3 className="text-2xl md:text-3xl font-semibold">
+                <h3 className="">
                   {project.title}
                 </h3>
-                <p className="text-sm md:text-base text-gray-300">
-                  {project.description}
-                </p>
+                <p
+                  className="mt-4 text-lg leading-relaxed"
+                  dangerouslySetInnerHTML={{
+                    __html: highlightTech(project.description),
+                  }}
+                />
 
-                {/* tech pills */}
-                <ul className="flex flex-wrap gap-2 text-xs md:text-sm">
-                  {project.tech.map((tech) => (
-                    <li
-                      key={tech}
-                      className="rounded-full border border-yellow-400/60 px-3 py-1 text-yellow-300"
-                    >
-                      {tech}
-                    </li>
-                  ))}
-                </ul>
 
                 {/* optional links */}
                 <div className="flex gap-4 text-xs md:text-sm">
                   {project.link && (
                     <a
+                      className="cursor-pointer"
                       href={project.link}
                       target="_blank"
                       rel="noreferrer"
-                      className="underline underline-offset-4 decoration-yellow-400 hover:text-yellow-300"
                     >
-                      View live
+                      <button className="bg-[#FED027] hover:bg-[#0A0A0A] text-[#0A0A0A] hover:text-[#FED027] font-bold px-3 lg:px-6 py-2.5 border-[#FED027] border-2 rounded-sm inline-flex items-center gap-2">
+                        View code
+                      </button>
                     </a>
                   )}
                   {project.github && (
@@ -93,7 +88,7 @@ function Projects() {
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full max-h-[320px] object-cover"
+                  className="w-full h-full max-h-[520px] object-cover"
                 />
               </div>
             </article>

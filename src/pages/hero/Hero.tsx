@@ -5,13 +5,20 @@ import TechIconsGrid from "../hero/TechIconsGrid";
 import { IoNewspaperOutline } from "react-icons/io5";
 import { PiArrowBendRightDownBold } from "react-icons/pi";
 
-
-import { useState } from "react";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+import { gsap } from "gsap";
 
 function Hero() {
 
-  const [, setActive] = useState("");
+  gsap.registerPlugin(ScrollToPlugin);
 
+  const scrollToWithOffset = (id: string, offset: number) => {
+    const element = document.getElementById(id);
+    if (element) {
+      const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+      gsap.to(window, { duration: 1, scrollTo: elementPosition + offset, ease: "power2.out" });
+    }
+  }
 
 
   return (
@@ -36,9 +43,14 @@ function Hero() {
               debugging, and seamless design integration.</p>
           </div>
           <div className="flex gap-10">
-            <a href="#projects" className="hero-grid-item-button">
+            <a
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToWithOffset("projects", -150);
+            }}
+            href="#projects"
+            className="hero-grid-item-button">
               <button
-                onClick={() => setActive("#projects")}
                 className="bg-[#FED027] hover:bg-[#0A0A0A] text-[#0A0A0A] hover:text-[#FED027] font-bold px-3 lg:px-6 py-2.5 border-[#FED027] border-2 rounded-sm inline-flex items-center gap-2">
                 <PiArrowBendRightDownBold className="text-lg" />
                 View projects
@@ -46,7 +58,6 @@ function Hero() {
             </a>
             <a target="_blank" href="https://drive.google.com/file/d/1pUpSGQiNXj7saV5yEILvPEKz_Z7MqJ37/view" className="hero-grid-item-button">
               <button
-                onClick={() => setActive("#projects")}
               className="bg-opacity-0 hover:bg-[#FED027] text-[#FED027] hover:text-[#0A0A0A] font-bold px-3 lg:px-6 py-2.5 border-[#FED027] border-2 rounded-sm inline-flex items-center gap-2">
                 <IoNewspaperOutline className="text-lg" />
                 Resume

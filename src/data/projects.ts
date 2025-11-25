@@ -5,12 +5,11 @@ export type Project = {
   title: string;
   description: string;
   image: string;         // path to imported image
-  tech: string[];        // list of technologies used
   link?: string;         // optional live link
   github?: string;       // optional repo link
 };
 
-import dionHomesImg from "../assets/me-bg.png";
+import dionHomesImg from "../assets/dion.jpg";
 import lineaImg from "../assets/me-bg.png";
 import nishaniImg from "../assets/me-bg.png";
 
@@ -18,11 +17,10 @@ import nishaniImg from "../assets/me-bg.png";
 export const projects: Project[] = [
   {
     id: "dion-homes",
-    title: "Dion Homes Real Estate Platform",
+    title: "Dion Homes",
     description:
-      "Real estate website built with Drupal, custom content types, views, and a modern frontend for showcasing properties.",
+      "I worked on a real-estate website built with Drupal(CMS), using JavaScript, SCSS, Bootstrap, and Twig. I created content types, views, Paragraphs, custom blocks, and workflow automations with hooks. I implemented responsive components, Swiper sliders, and used Git throughout the project.",
     image: dionHomesImg,
-    tech: ["Drupal", "PHP", "Twig", "JavaScript", "CSS"],
     link: "https://dionhomes.co.uk",
   },
   {
@@ -31,7 +29,7 @@ export const projects: Project[] = [
     description:
       "Landing pages for club events, optimized for SEO and fast performance, with animations and responsive layouts.",
     image: lineaImg,
-    tech: ["HTML", "CSS", "JavaScript", "GSAP"],
+    link: "https://dionhomes.co.uk",
   },
   {
     id: "nishani-hotel",
@@ -39,6 +37,6 @@ export const projects: Project[] = [
     description:
       "Boutique hotel presentation site focused on clean UI, responsive layout, and SEO-friendly structure.",
     image: nishaniImg,
-    tech: ["React", "TypeScript", "Tailwind CSS"],
+    link: "https://dionhomes.co.uk",
   },
 ];
